@@ -8,7 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-This is the Starter Project, which is intended to be a core learning asset for the students
-who have enroled the Design and Testing subject of the Software Engineering curriculum of the 
-University of Sevilla.  This project helps them start working on their new information system 
-projects.
+This is Acme-Planner. This project helps students to start working on a formal information system 
+project in Design & Testing II's subject.
+
+- GitHub repository: https://github.com/danmarsua1/Acme-Planner-D02.git
+- GitHub release: FALTA INCLUIR LINK A LA RELEASE
