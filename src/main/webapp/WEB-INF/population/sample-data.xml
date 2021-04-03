@@ -18,5 +18,27 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
+	
+	<!-- SHOUTS -->
+	
+	<bean id="shout01" class="acme.entities.shouts.Shout">
+	<property name="moment" value="2020/02/03 14:16"></property>
+	<property name="author" value="Joan Martínez"></property>
+	<property name="text" value="Y ahora a estudiar para los exámenes finales. Que pereza..."></property>
+	</bean>
+	
+	<bean id="shout02" class="acme.entities.shouts.Shout">
+	<property name="moment" value="2020/02/15 18:25"></property>
+	<property name="author" value="Juan Manuel Tello"></property>
+	<property name="text" value="¡Arriba España!"></property>
+	<property name="info" value="http://www.example.com"></property>
+	</bean>
+	
+	<bean id="shout03" class="acme.entities.shouts.Shout">
+	<property name="moment" value="2021/03/22 20:03"></property>
+	<property name="author" value="Isaac Marcos"></property>
+	<property name="text" value="Felíz día de Andalucía"></property>
+	<property name="info" value="http://www.info-link.com"></property>
+	</bean>
 
 </beans>
