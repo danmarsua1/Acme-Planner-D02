@@ -40,5 +40,23 @@
 	<property name="text" value="Felíz día de Andalucía"></property>
 	<property name="info" value="http://www.info-link.com"></property>
 	</bean>
+	
+	<!-- TASKS -->
+	
+	<bean id="task01" class="acme.entities.tasks.Task">
+	<property name="title" value="Task 01"></property>
+	<property name="executionStart" value="2021/10/02 16:00"></property>
+	<property name="executionEnd" value="2021/10/02 20:00"></property>
+	<property name="workLoad" value="4"></property>
+	<property name="description" value="First task"></property>
+	</bean>
+	
+	<bean id="task02" class="acme.entities.tasks.Task">
+	<property name="title" value="Task 02"></property>
+	<property name="executionStart" value="2021/10/05 17:00"></property>
+	<property name="executionEnd" value="2021/10/05 20:00"></property>
+	<property name="workLoad" value="3"></property>
+	<property name="description" value="Second task"></property>
+	</bean>
 
 </beans>
