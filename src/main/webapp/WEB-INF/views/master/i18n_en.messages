@@ -10,7 +10,7 @@
 
 # master.banner.welcome #######################################################
 
-master.banner.background = #FFE97F 
+master.banner.background = #eff4b3
 
 # master.welcome ##############################################################
 
@@ -32,6 +32,7 @@ master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 
 master.menu.anonymous.list-shout = List shouts
+master.menu.anonymous.create-shout = New shout
 
 # master.menu.administrator ###################################################
 
