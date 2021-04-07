@@ -1,5 +1,5 @@
 
-package acme.features.anonymous.task;
+package acme.features.authenticated.task;
 
 import java.util.Collection;
 
@@ -9,23 +9,29 @@ import org.springframework.stereotype.Service;
 import acme.entities.tasks.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousTaskListService implements AbstractListService<Anonymous, Task> {
+public class AuthenticatedTaskListService implements AbstractListService<Authenticated, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	AnonymousTaskRepository repository;
+	AuthenticatedTaskRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
+		Boolean res = false;
+		final Principal principal = request.getPrincipal();
+		if (principal.isAuthenticated()) {
+			res = true;
+		}
 
-		return true;
+		return res;
 	}
 
 	@Override
@@ -42,7 +48,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 	public Collection<Task> findMany(final Request<Task> request) {
 		assert request != null;
 
-		return this.repository.findManyActives();
+		return this.repository.findManyFinished();
 	}
 
 }

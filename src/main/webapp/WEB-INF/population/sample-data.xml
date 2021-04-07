@@ -45,18 +45,26 @@
 	
 	<bean id="task01" class="acme.entities.tasks.Task">
 	<property name="title" value="Task 01"></property>
-	<property name="executionStart" value="2021/04/07 14:15"></property>
-	<property name="executionEnd" value="2021/04/07 20:15"></property>
+	<property name="executionStart" value="2020/04/07 14:15"></property>
+	<property name="executionEnd" value="2020/04/07 20:15"></property>
 	<property name="workLoad" value="6"></property>
 	<property name="description" value="First task"></property>
 	</bean>
 	
 	<bean id="task02" class="acme.entities.tasks.Task">
 	<property name="title" value="Task 02"></property>
-	<property name="executionStart" value="2021/04/07 14:15"></property>
-	<property name="executionEnd" value="2021/04/07 16:15"></property>
+	<property name="executionStart" value="2020/04/07 14:15"></property>
+	<property name="executionEnd" value="2020/04/07 16:15"></property>
 	<property name="workLoad" value="2"></property>
 	<property name="description" value="Second task"></property>
+	</bean>
+	
+	<bean id="task03" class="acme.entities.tasks.Task">
+	<property name="title" value="Task 03"></property>
+	<property name="executionStart" value="2021/04/07 14:05"></property>
+	<property name="executionEnd" value="2021/04/07 17:05"></property>
+	<property name="workLoad" value="3"></property>
+	<property name="description" value="Third task"></property>
 	</bean>
 
 </beans>

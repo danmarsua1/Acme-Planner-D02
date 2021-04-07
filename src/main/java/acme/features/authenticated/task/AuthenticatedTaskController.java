@@ -1,5 +1,5 @@
 
-package acme.features.anonymous.shout;
+package acme.features.authenticated.task;
 
 import javax.annotation.PostConstruct;
 
@@ -7,22 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.shouts.Shout;
+import acme.entities.tasks.Task;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/anonymous/shout/")
-public class AnonymousShoutController extends AbstractController<Anonymous, Shout> {
+@RequestMapping("/authenticated/task/")
+public class AuthenticatedTaskController extends AbstractController<Authenticated, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousShoutListService listService;
-	
-	@Autowired
-	protected AnonymousShoutCreateService createService;
+	protected AuthenticatedTaskListService listService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -30,7 +27,6 @@ public class AnonymousShoutController extends AbstractController<Anonymous, Shou
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
 
 }

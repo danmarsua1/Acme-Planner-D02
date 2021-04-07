@@ -33,12 +33,12 @@ public class Task extends DomainEntity {
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@Future(message = "{task.error.execution.start}")
+	@Future(message = "{task.error.executionStart}")
 	private Date				executionStart;
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@Future(message = "{task.error.execution.end}")
+	@Future(message = "{task.error.executionEnd}")
 	private Date				executionEnd;
 	
 	@NotNull

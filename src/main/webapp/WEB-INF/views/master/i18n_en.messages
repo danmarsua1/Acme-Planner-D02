@@ -36,6 +36,12 @@ master.menu.anonymous.create-shout = New shout
 
 master.menu.anonymous.list-task = List tasks
 
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Authenticated
+
+master.menu.authenticated.list-task = List tasks
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
