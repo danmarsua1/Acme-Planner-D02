@@ -328,7 +328,7 @@ Task
 + title: String {NotBlank,@Column(length = 80)}
 + executionStart: Date {NotNull,Temporal(TIMESTAMP),Future}
 + executionEnd: Date {NotNull,Temporal(TIMESTAMP),Future}
-+ workLoad: int {NotNull}
++ / workLoad: int {NotNull}
 + description: String {NotBlank,@Column(length = 500)}
 + link: String {URL}
 </panel_attributes>
