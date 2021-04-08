@@ -12,10 +12,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnonymousTaskRepository extends AbstractRepository {
 
-	@Query("select t from Task t")
+	@Query("select t from Task t where t.isPrivate=false")
 	Collection<Task> findMany();
 
-	@Query("select t from Task t where CURRENT_TIMESTAMP >= t.executionStart and CURRENT_TIMESTAMP < t.executionEnd order by t.workLoad DESC")
+	@Query("select t from Task t where CURRENT_TIMESTAMP >= t.executionStart and CURRENT_TIMESTAMP < t.executionEnd and t.isPrivate=false order by t.workLoad DESC")
 	Collection<Task> findManyActives();
 	
 	@Query("select t from Task t where t.id = ?1")
