@@ -320,7 +320,7 @@ Shout
       <x>385</x>
       <y>364</y>
       <w>287</w>
-      <h>105</h>
+      <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Task
@@ -331,6 +331,7 @@ Task
 + / workLoad: int {NotNull}
 + description: String {NotBlank,@Column(length = 500)}
 + link: String {URL}
++ isPrivate: Boolean
 </panel_attributes>
     <additional_attributes/>
   </element>
