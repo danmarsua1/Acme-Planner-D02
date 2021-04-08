@@ -51,6 +51,8 @@ public class Task extends DomainEntity {
 	@URL
 	private String				link;
 	
+	private Boolean isPrivate;
+	
 	//Aux methods--------------------------
 	
 	@PreUpdate
