@@ -714,3 +714,9 @@ ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_221 on DESKTOP-GHNR44Q with PID 11652 (C:\Users\DAN\Universidad 15-10-20\DP II 20-21\Recursos\Workspace-21.1\Workspace-21.1\Projects\Acme-Planner\target\classes started by DAN in C:\Users\DAN\Universidad 15-10-20\DP II 20-21\Recursos\Workspace-21.1\Workspace-21.1\Projects\Acme-Planner)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 6.61 seconds (JVM running for 7.122)
+INFO [acme.framework.utilities.DatabasePopulator] Populating initial data
+INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
+INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
