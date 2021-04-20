@@ -335,4 +335,20 @@ Task
 </panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>84</x>
+      <y>483</y>
+      <w>287</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Customisation
+--
++ spamwords: String {NotBlank,@Pattern('(^.*[^,]$)')}
++ threshold: double {NotNull,Range(min=0,max=100)}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
