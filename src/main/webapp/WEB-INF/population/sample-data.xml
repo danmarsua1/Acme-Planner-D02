@@ -87,5 +87,11 @@
 	<property name="description" value="Fifth task"></property>
 	<property name="isPrivate" value="true"/>
 	</bean>
+	
+	<!-- Customisation -->
+	<bean id="Customisation" class="acme.entities.customisations.Customisation">
+		<property name="spamwords" value="sex,hard core,viagra,cialis,nigeria,you've won,million dollar,sexo,duro,has ganado,millon de dolares"/>
+		<property name="threshold" value="10.0"/>
+	</bean>
 
 </beans>
