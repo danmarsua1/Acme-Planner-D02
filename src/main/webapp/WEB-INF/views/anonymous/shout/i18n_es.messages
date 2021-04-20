@@ -18,3 +18,5 @@ anonymous.shout.list.label.text 	= Texto
 
 anonymous.shout.form.button.create = Gritar
 anonymous.shout.form.button.return = Volver
+
+anonymous.shout.error.spam = No se permite el spam

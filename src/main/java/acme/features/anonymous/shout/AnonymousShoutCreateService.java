@@ -1,11 +1,15 @@
 package acme.features.anonymous.shout;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.customisations.Customisation;
 import acme.entities.shouts.Shout;
+import acme.features.administrator.customisation.AdministratorCustomisationRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -19,6 +23,9 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 	@Autowired
 	AnonymousShoutRepository repository;
+	
+	@Autowired
+	private AdministratorCustomisationRepository	customisationRepository;
 
 
 	@Override
@@ -66,6 +73,28 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		final List<Customisation> customisations = new ArrayList<Customisation>(this.customisationRepository.findMany());
+		final Customisation customisation = customisations.get(0);
+		final String spam = customisation.getSpamwords();
+
+		final String[] spamWords = spam.split(",");
+		final String author = entity.getAuthor();
+		final String text = entity.getText();
+		final String info = entity.getInfo();
+
+		for (final String s : spamWords) {
+			if (author.contains(s)) {
+				errors.state(request, false, "author", "anonymous.shout.error.spam");
+			}
+			if (text.contains(s)) {
+				errors.state(request, false, "text", "anonymous.shout.error.spam");
+			}
+			if (info.contains(s)) {
+				errors.state(request, false, "info", "anonymous.shout.error.spam");
+			}
+		}
+		
 	}
 
 	@Override
@@ -77,6 +106,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
+		
 		this.repository.save(entity);
 	}
 

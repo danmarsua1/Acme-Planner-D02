@@ -18,3 +18,5 @@ anonymous.shout.list.label.text 	= Text
 
 anonymous.shout.form.button.create = Shout!
 anonymous.shout.form.button.return = Return
+
+anonymous.shout.error.spam = No spamming allowed
