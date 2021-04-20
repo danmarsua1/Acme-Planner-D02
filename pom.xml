@@ -19,25 +19,7 @@
 
 	<artifactId>Acme-Planner</artifactId>
 	<version>1.0</version>
-	<packaging>${packaging.type}</packaging>
-
-	<profiles>
-		<profile>
-			<id>webapp</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<packaging.type>war</packaging.type>
-			</properties>
-		</profile>
-		<profile>
-			<id>batch</id>
-			<properties>
-				<packaging.type>jar</packaging.type>
-			</properties>
-		</profile>
-	</profiles>
+	<packaging>war</packaging>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
