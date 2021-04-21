@@ -23,6 +23,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.firewall.HttpFirewall;
+import org.springframework.security.web.firewall.StrictHttpFirewall;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import acme.framework.services.AuthenticationService;
@@ -104,6 +106,14 @@ public class AuthenticationConfiguration extends WebSecurityConfigurerAdapter {
 		result = new ExtendedSecurityExpressionHandler();
 
 		return result;
+	}
+	
+	@Bean
+	HttpFirewall httpFirewall() {
+	    final StrictHttpFirewall firewall = new StrictHttpFirewall();
+	    firewall.setAllowSemicolon(true);
+	    firewall.setAllowUrlEncodedDoubleSlash(true);
+	    return firewall;
 	}
 
 }
