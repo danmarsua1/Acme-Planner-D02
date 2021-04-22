@@ -109,10 +109,11 @@ public class AuthenticationConfiguration extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Bean
-	HttpFirewall httpFirewall() {
+	public HttpFirewall allowUrlRestrictions() {
 	    final StrictHttpFirewall firewall = new StrictHttpFirewall();
 	    firewall.setAllowSemicolon(true);
 	    firewall.setAllowUrlEncodedDoubleSlash(true);
+	    firewall.setAllowUrlEncodedSlash(true);
 	    return firewall;
 	}
 
