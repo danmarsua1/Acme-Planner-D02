@@ -1,4 +1,4 @@
-# Gitignore code
+#Gitignore code
 target/
 !.mvn/wrapper/maven-wrapper.jar
 
