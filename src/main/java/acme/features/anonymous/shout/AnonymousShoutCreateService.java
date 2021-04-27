@@ -76,23 +76,19 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		final List<Customisation> customisations = new ArrayList<Customisation>(this.customisationRepository.findMany());
 		final Customisation customisation = customisations.get(0);
-		final String spam = customisation.getSpamwords();
 
-		final String[] spamWords = spam.split(",");
 		final String author = entity.getAuthor();
 		final String text = entity.getText();
 		final String info = entity.getInfo();
 
-		for (final String s : spamWords) {
-			if (author.contains(s)) {
-				errors.state(request, false, "author", "anonymous.shout.error.spam");
-			}
-			if (text.contains(s)) {
-				errors.state(request, false, "text", "anonymous.shout.error.spam");
-			}
-			if (info.contains(s)) {
-				errors.state(request, false, "info", "anonymous.shout.error.spam");
-			}
+		if (customisation.isSpam(author)) {
+			errors.state(request, false, "author", "anonymous.shout.error.spam");
+		}
+		if (customisation.isSpam(text)) {
+			errors.state(request, false, "text", "anonymous.shout.error.spam");
+		}
+		if (customisation.isSpam(info)) {
+			errors.state(request, false, "info", "anonymous.shout.error.spam");
 		}
 		
 	}

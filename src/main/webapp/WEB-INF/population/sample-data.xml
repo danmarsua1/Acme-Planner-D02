@@ -19,6 +19,62 @@
 
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
 	
+	<!-- MANAGERS -->
+	
+	<bean name="manager1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager1" />
+		<property name="password" value="manager1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager 1" />
+				<property name="surname" value="One" />
+				<property name="email" value="manager1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager1Manager" />
+				<ref bean="manager1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="manager1Manager" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager1UserAccount" />
+	</bean>
+
+	<bean name="manager1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager1UserAccount" />
+	</bean>
+	
+	<bean name="manager2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager2" />
+		<property name="password" value="manager2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager 2" />
+				<property name="surname" value="Two" />
+				<property name="email" value="manager2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager2Manager" />
+				<ref bean="manager2Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="manager2Manager" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager2UserAccount" />
+	</bean>
+
+	<bean name="manager2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager2UserAccount" />
+	</bean>
+	
 	<!-- SHOUTS -->
 	
 	<bean id="shout01" class="acme.entities.shouts.Shout">
@@ -88,7 +144,8 @@
 	<property name="isPrivate" value="true"/>
 	</bean>
 	
-	<!-- Customisation -->
+	<!-- CUSTOMISATION -->
+	
 	<bean id="Customisation" class="acme.entities.customisations.Customisation">
 		<property name="spamwords" value="sex,hard core,viagra,cialis,nigeria,you've won,million dollar,sexo,duro,has ganado,millon de dolares"/>
 		<property name="threshold" value="10.0"/>
