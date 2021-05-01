@@ -19,8 +19,6 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<!--<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
-			<acme:menu-separator/>-->
 			<acme:menu-suboption code="master.menu.anonymous.list-shout" action="/anonymous/shout/list" />
 			<acme:menu-suboption code="master.menu.anonymous.create-shout" action="/anonymous/shout/create" />
 			<acme:menu-separator/>
@@ -44,7 +42,6 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
-			<!--<acme:menu-suboption code="master.menu.manager.favourite-link" action="http://www.example.com/"/>-->
 			<acme:menu-suboption code="master.menu.manager.list-task" action="/manager/task/list-mine"/>
 			<acme:menu-suboption code="master.menu.manager.create-task" action="/manager/task/create"/>
 		</acme:menu-option>
@@ -57,7 +54,6 @@
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
 			<acme:menu-suboption code="master.menu.user-account.become-manager" action="/authenticated/manager/create" access="!hasRole('Manager')"/>
-			<!--<acme:menu-suboption code="master.menu.user-account.manager" action="/authenticated/manager/update" access="hasRole('Manager')"/>-->
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
