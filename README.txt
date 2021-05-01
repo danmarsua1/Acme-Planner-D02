@@ -12,4 +12,4 @@ This is Acme-Planner. This project helps students to start working on a formal i
 project in Design & Testing II's subject.
 
 - GitHub repository: https://github.com/danmarsua1/Acme-Planner-D02.git
-- GitHub release: FALTA INCLUIR LINK A LA RELEASE
+- GitHub release: https://github.com/danmarsua1/Acme-Planner-D02/releases/tag/v1.0
