@@ -12,8 +12,14 @@
 
 package acme.entities.roles;
 
-import javax.persistence.Entity;
+import java.util.Collection;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import acme.entities.tasks.Task;
 import acme.framework.entities.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,5 +38,10 @@ public class Manager extends UserRole {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
+	@Valid
+	@NotNull
+	@OneToMany
+	private Collection<Task>	tasks;
 
 }

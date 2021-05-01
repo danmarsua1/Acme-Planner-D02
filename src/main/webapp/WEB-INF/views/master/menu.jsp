@@ -45,6 +45,8 @@
 
 		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
 			<!--<acme:menu-suboption code="master.menu.manager.favourite-link" action="http://www.example.com/"/>-->
+			<acme:menu-suboption code="master.menu.manager.list-task" action="/manager/task/list-mine"/>
+			<acme:menu-suboption code="master.menu.manager.create-task" action="/manager/task/create"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
