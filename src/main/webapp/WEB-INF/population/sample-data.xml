@@ -42,6 +42,12 @@
 
 	<bean name="manager1Manager" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="manager1UserAccount" />
+		<property name="tasks">
+			<list>
+				<ref bean="task03" />
+				<ref bean="task04" />
+			</list>
+		</property>
 	</bean>
 
 	<bean name="manager1Authenticated" class="acme.framework.entities.Authenticated">
@@ -69,6 +75,11 @@
 
 	<bean name="manager2Manager" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="manager2UserAccount" />
+		<property name="tasks">
+			<list>
+				<ref bean="task05" />
+			</list>
+		</property>
 	</bean>
 
 	<bean name="manager2Authenticated" class="acme.framework.entities.Authenticated">
