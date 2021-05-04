@@ -1,10 +1,10 @@
 
-package acme.features.manager.task;
+package acme.features.usermanager.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.roles.Manager;
+import acme.entities.roles.Usermanager;
 import acme.entities.tasks.Task;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -13,11 +13,11 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class ManagerTaskDeleteService implements AbstractDeleteService<Manager, Task> {
+public class UsermanagerTaskDeleteService implements AbstractDeleteService<Usermanager, Task> {
 
 	// Internal state ------------------------------------------------------------------
 	@Autowired
-	ManagerTaskRepository		repository;
+	UsermanagerTaskRepository		repository;
 
 
 	@Override
@@ -72,7 +72,7 @@ public class ManagerTaskDeleteService implements AbstractDeleteService<Manager, 
 		assert entity != null;
 
 		final Principal principal = request.getPrincipal();
-		final Manager manager = this.repository.findManagerById(principal.getActiveRoleId());
+		final Usermanager manager = this.repository.findManagerById(principal.getActiveRoleId());
 
 		manager.getTasks().remove(entity);
 

@@ -1,5 +1,5 @@
 
-package acme.features.manager.task;
+package acme.features.usermanager.task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.customisations.Customisation;
-import acme.entities.roles.Manager;
+import acme.entities.roles.Usermanager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.customisation.AdministratorCustomisationRepository;
 import acme.framework.components.Errors;
@@ -17,11 +17,11 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, Task> {
+public class UsermanagerTaskUpdateService implements AbstractUpdateService<Usermanager, Task> {
 
 	// Internal state ------------------------------------------------------------------
 	@Autowired
-	ManagerTaskRepository							repository;
+	UsermanagerTaskRepository							repository;
 
 	@Autowired
 	private AdministratorCustomisationRepository	customisationRepository;

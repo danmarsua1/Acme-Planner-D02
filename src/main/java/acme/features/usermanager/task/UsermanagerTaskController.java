@@ -1,5 +1,5 @@
 
-package acme.features.manager.task;
+package acme.features.usermanager.task;
 
 import javax.annotation.PostConstruct;
 
@@ -8,31 +8,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
-import acme.entities.roles.Manager;
+import acme.entities.roles.Usermanager;
 import acme.entities.tasks.Task;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/manager/task/")
-public class ManagerTaskController extends AbstractController<Manager, Task> {
+@RequestMapping("/usermanager/task/")
+public class UsermanagerTaskController extends AbstractController<Usermanager, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private ManagerTaskListMineService	listMineService;
+	private UsermanagerTaskListMineService	listMineService;
 
 	@Autowired
-	private ManagerTaskShowService		showService;
+	private UsermanagerTaskShowService		showService;
 
 	@Autowired
-	private ManagerTaskCreateService		createService;
+	private UsermanagerTaskCreateService		createService;
 
 	@Autowired
-	private ManagerTaskUpdateService		updateService;
+	private UsermanagerTaskUpdateService		updateService;
 
 	@Autowired
-	private ManagerTaskDeleteService		deleteService;
+	private UsermanagerTaskDeleteService		deleteService;
 
 
 	// Constructors -----------------------------------------------------------

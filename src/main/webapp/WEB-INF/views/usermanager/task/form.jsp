@@ -26,23 +26,23 @@
 
 	<acme:form-submit test="${command == 'show' }"
 		code="manager.task.form.button.update" 
-		action="/manager/task/update"/>
+		action="/usermanager/task/update"/>
 	<acme:form-submit test="${command == 'show' }"
 		code="manager.task.form.button.delete" 
-		action="/manager/task/delete"/>
+		action="/usermanager/task/delete"/>
 		
 	<acme:form-submit test="${command == 'create' }" method="post"
 		code="manager.task.form.button.create" 
-		action="/manager/task/create"/>
+		action="/usermanager/task/create"/>
 	<acme:form-submit test="${command == 'update' }" method="post"
 		code="manager.task.form.button.update" 
-		action="/manager/task/update"/>
+		action="/usermanager/task/update"/>
 	<acme:form-submit test="${command == 'update' }"
 		code="manager.task.form.button.delete" 
-		action="/manager/task/delete"/>
+		action="/usermanager/task/delete"/>
 	<acme:form-submit test="${command == 'delete' }"
 		code="manager.task.form.button.delete" 
-		action="/manager/task/delete"/>
+		action="/usermanager/task/delete"/>
 			
 	<acme:form-return code="manager.task.form.button.return"/>
 </acme:form>

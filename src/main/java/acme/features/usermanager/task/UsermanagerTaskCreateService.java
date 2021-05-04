@@ -1,5 +1,5 @@
 
-package acme.features.manager.task;
+package acme.features.usermanager.task;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.customisations.Customisation;
-import acme.entities.roles.Manager;
+import acme.entities.roles.Usermanager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.customisation.AdministratorCustomisationRepository;
 import acme.framework.components.Errors;
@@ -19,11 +19,11 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class ManagerTaskCreateService implements AbstractCreateService<Manager, Task> {
+public class UsermanagerTaskCreateService implements AbstractCreateService<Usermanager, Task> {
 
 	// Internal state ------------------------------------------------------------------
 	@Autowired
-	ManagerTaskRepository							repository;
+	UsermanagerTaskRepository							repository;
 
 	@Autowired
 	private AdministratorCustomisationRepository	customisationRepository;
@@ -103,7 +103,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 
 		final Principal principal = request.getPrincipal();
-		final Manager manager = this.repository.findManagerById(principal.getActiveRoleId());
+		final Usermanager manager = this.repository.findManagerById(principal.getActiveRoleId());
 
 		manager.getTasks().add(entity);
 

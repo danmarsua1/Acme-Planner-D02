@@ -10,7 +10,7 @@
 - they accept any liabilities with respect to them.
 --%>
 
-<%@page language="java" import="acme.framework.helpers.PrincipalHelper,acme.entities.roles.Manager"%>
+<%@page language="java" import="acme.framework.helpers.PrincipalHelper,acme.entities.roles.Usermanager"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
@@ -41,9 +41,9 @@
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
 
-		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
-			<acme:menu-suboption code="master.menu.manager.list-task" action="/manager/task/list-mine"/>
-			<acme:menu-suboption code="master.menu.manager.create-task" action="/manager/task/create"/>
+		<acme:menu-option code="master.menu.manager" access="hasRole('Usermanager')">
+			<acme:menu-suboption code="master.menu.manager.list-task" action="/usermanager/task/list-mine"/>
+			<acme:menu-suboption code="master.menu.manager.create-task" action="/usermanager/task/create"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
@@ -53,7 +53,6 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
-			<acme:menu-suboption code="master.menu.user-account.become-manager" action="/authenticated/manager/create" access="!hasRole('Manager')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

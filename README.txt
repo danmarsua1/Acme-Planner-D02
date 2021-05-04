@@ -16,5 +16,10 @@ project in Design & Testing II's subject.
 
 ## Clever-Cloud credentials
 
--user: danmarsua1@alum.us.es
--password: danmarsua1
+- User: danmarsua1@alum.us.es
+- Password: danmarsua1
+
+!!!ATTENTION!!!
+Due to conflict with the Tomcat Manager App (usually <app_name>/manager) of the Clever-Cloud server, 
+both in classes, attributes and entities, it has been decided to rename the role called "Manager" 
+to "Usermanager".

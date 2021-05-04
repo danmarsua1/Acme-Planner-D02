@@ -1,5 +1,5 @@
 /*
- * AuthenticatedManagerUpdateService.java
+ * AuthenticatedManagerCreateService.java
  *
  * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
@@ -10,12 +10,12 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.manager;
+package acme.features.authenticated.usermanager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.roles.Manager;
+import acme.entities.roles.Usermanager;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -23,36 +23,37 @@ import acme.framework.components.Request;
 import acme.framework.components.Response;
 import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
+import acme.framework.entities.UserAccount;
 import acme.framework.helpers.PrincipalHelper;
-import acme.framework.services.AbstractUpdateService;
+import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AuthenticatedManagerUpdateService implements AbstractUpdateService<Authenticated, Manager> {
+public class AuthenticatedUsermanagerCreateService implements AbstractCreateService<Authenticated, Usermanager> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedManagerRepository repository;
+	protected AuthenticatedUsermanagerRepository repository;
 
-	// AbstractUpdateService<Authenticated, Manager> interface -----------------
+	// AbstractCreateService<Authenticated, Manager> ---------------------------
 
 
 	@Override
-	public boolean authorise(final Request<Manager> request) {
+	public boolean authorise(final Request<Usermanager> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void validate(final Request<Manager> request, final Manager entity, final Errors errors) {
+	public void validate(final Request<Usermanager> request, final Usermanager entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 	}
 
 	@Override
-	public void bind(final Request<Manager> request, final Manager entity, final Errors errors) {
+	public void bind(final Request<Usermanager> request, final Usermanager entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -61,7 +62,7 @@ public class AuthenticatedManagerUpdateService implements AbstractUpdateService<
 	}
 
 	@Override
-	public void unbind(final Request<Manager> request, final Manager entity, final Model model) {
+	public void unbind(final Request<Usermanager> request, final Usermanager entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -70,23 +71,26 @@ public class AuthenticatedManagerUpdateService implements AbstractUpdateService<
 	}
 
 	@Override
-	public Manager findOne(final Request<Manager> request) {
+	public Usermanager instantiate(final Request<Usermanager> request) {
 		assert request != null;
 
-		Manager result;
+		Usermanager result;
 		Principal principal;
 		int userAccountId;
+		UserAccount userAccount;
 
 		principal = request.getPrincipal();
 		userAccountId = principal.getAccountId();
+		userAccount = this.repository.findOneUserAccountById(userAccountId);
 
-		result = this.repository.findOneManagerByUserAccountId(userAccountId);
+		result = new Usermanager();
+		result.setUserAccount(userAccount);
 
 		return result;
 	}
 
 	@Override
-	public void update(final Request<Manager> request, final Manager entity) {
+	public void create(final Request<Usermanager> request, final Usermanager entity) {
 		assert request != null;
 		assert entity != null;
 
@@ -94,7 +98,7 @@ public class AuthenticatedManagerUpdateService implements AbstractUpdateService<
 	}
 
 	@Override
-	public void onSuccess(final Request<Manager> request, final Response<Manager> response) {
+	public void onSuccess(final Request<Usermanager> request, final Response<Usermanager> response) {
 		assert request != null;
 		assert response != null;
 
