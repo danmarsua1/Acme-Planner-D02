@@ -13,3 +13,8 @@ project in Design & Testing II's subject.
 
 - GitHub repository: https://github.com/danmarsua1/Acme-Planner-D02.git
 - GitHub release: https://github.com/danmarsua1/Acme-Planner-D02/releases/tag/v1.0
+
+## Clever-Cloud credentials
+
+-user: danmarsua1@alum.us.es
+-password: danmarsua1
