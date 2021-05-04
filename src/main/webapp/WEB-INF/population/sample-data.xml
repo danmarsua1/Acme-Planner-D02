@@ -44,7 +44,6 @@
 		<property name="userAccount" ref="manager1UserAccount" />
 		<property name="tasks">
 			<list>
-				<ref bean="task03" />
 				<ref bean="task04" />
 			</list>
 		</property>
@@ -89,70 +88,79 @@
 	<!-- SHOUTS -->
 	
 	<bean id="shout01" class="acme.entities.shouts.Shout">
-	<property name="moment" value="2021/03/02 14:16"></property>
+	<property name="moment" value="2021/05/04 14:16"></property>
 	<property name="author" value="Joan Martínez"></property>
 	<property name="text" value="Y ahora a estudiar para los exámenes finales. Que pereza..."></property>
 	</bean>
 	
 	<bean id="shout02" class="acme.entities.shouts.Shout">
-	<property name="moment" value="2021/04/03 18:25"></property>
+	<property name="moment" value="2021/05/03 18:25"></property>
 	<property name="author" value="Juan Manuel Tello"></property>
 	<property name="text" value="¡Arriba España!"></property>
 	<property name="info" value="http://www.example.com"></property>
 	</bean>
 	
 	<bean id="shout03" class="acme.entities.shouts.Shout">
-	<property name="moment" value="2021/03/22 20:03"></property>
+	<property name="moment" value="2021/05/02 20:03"></property>
 	<property name="author" value="Isaac Marcos"></property>
 	<property name="text" value="Felíz día de Andalucía"></property>
 	<property name="info" value="http://www.info-link.com"></property>
+	</bean>
+	
+	<bean id="shout04" class="acme.entities.shouts.Shout">
+	<property name="moment" value="2021/04/01 23:03"></property>
+	<property name="author" value="Maria Elisa Ferrer"></property>
+	<property name="text" value="A este paso, la pandemia no va a acabar nunca..."></property>
 	</bean>
 	
 	<!-- TASKS -->
 	
 	<bean id="task01" class="acme.entities.tasks.Task">
 	<property name="title" value="Task 01"></property>
-	<property name="executionStart" value="2021/08/21 14:15"></property>
-	<property name="executionEnd" value="2021/08/21 20:15"></property>
-	<property name="workLoad" value="6"></property>
+	<property name="executionStart" value="2021/05/04 20:00"></property>
+	<property name="executionEnd" value="2021/05/15 13:15"></property>
 	<property name="description" value="First task"></property>
 	<property name="isPrivate" value="false"/>
 	</bean>
 	
 	<bean id="task02" class="acme.entities.tasks.Task">
 	<property name="title" value="Task 02"></property>
-	<property name="executionStart" value="2021/09/07 14:15"></property>
-	<property name="executionEnd" value="2021/09/07 16:15"></property>
-	<property name="workLoad" value="2"></property>
+	<property name="executionStart" value="2021/05/04 20:00"></property>
+	<property name="executionEnd" value="2021/05/21 17:15"></property>
 	<property name="description" value="Second task"></property>
 	<property name="isPrivate" value="false"/>
 	</bean>
 	
 	<bean id="task03" class="acme.entities.tasks.Task">
 	<property name="title" value="Task 03"></property>
-	<property name="executionStart" value="2021/10/16 14:23"></property>
-	<property name="executionEnd" value="2021/10/16 17:23"></property>
-	<property name="workLoad" value="3"></property>
+	<property name="executionStart" value="2021/05/04 20:00"></property>
+	<property name="executionEnd" value="2021/05/04 20:45"></property>
 	<property name="description" value="Third task"></property>
-	<property name="isPrivate" value="true"/>
+	<property name="isPrivate" value="false"/>
 	</bean>
 	
 	<bean id="task04" class="acme.entities.tasks.Task">
 	<property name="title" value="Task 04"></property>
-	<property name="executionStart" value="2021/08/12 14:05"></property>
-	<property name="executionEnd" value="2021/08/12 18:05"></property>
-	<property name="workLoad" value="4"></property>
+	<property name="executionStart" value="2021/05/12 14:05"></property>
+	<property name="executionEnd" value="2021/05/13 19:05"></property>
 	<property name="description" value="Forth task"></property>
 	<property name="isPrivate" value="true"/>
 	</bean>
 	
 	<bean id="task05" class="acme.entities.tasks.Task">
 	<property name="title" value="Task 05"></property>
-	<property name="executionStart" value="2021/08/03 17:15"></property>
-	<property name="executionEnd" value="2021/08/03 19:15"></property>
-	<property name="workLoad" value="2"></property>
+	<property name="executionStart" value="2021/05/13 17:15"></property>
+	<property name="executionEnd" value="2021/05/16 19:15"></property>
 	<property name="description" value="Fifth task"></property>
 	<property name="isPrivate" value="true"/>
+	</bean>
+	
+	<bean id="task06" class="acme.entities.tasks.Task">
+	<property name="title" value="Task 06"></property>
+	<property name="executionStart" value="2021/05/05 01:00"></property>
+	<property name="executionEnd" value="2021/05/15 21:00"></property>
+	<property name="description" value="Sixth task"></property>
+	<property name="isPrivate" value="false"/>
 	</bean>
 	
 	<!-- CUSTOMISATION -->
